@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basic Web Template</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+          <label for="estimation">Estimation:</label>
+          <input type="text" id="estimation" name="estimation" />
+          <button id="add-button" class="add-button" onclick="createTask()">
+            ADD
+          </button>
+        </div>
+        <span class="close">&times;</span>
+      </div>
+    </div>
+    <div id="kanban">
+      <div id="columns">
+        <div class="column" id="column1">
+          <div id="header">
+            TO DO<button id="myBtn1" onclick="newTask('to-do')">
+              Add
+            </button>
+          </div>
+          <div
+            id="tasks1"
+            class="tasks"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          >
+            <div
+              id="task1"
+              class="task"
+              draggable="true"
+              ondragstart="drag(event)"
+            >
+              <h1 class="task-name">Arreglar bug login</h1>
+              <h2 class="task-estimation">8h</h2>
+              <button class="dltB" onclick="deleteTask(event)">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="column" id="column2">
+          <div id="header">
+            IN PROG<button id="myBtn2" onclick="newTask('in-prog')">Add</button>
+          </div>
+          <div
+            id="tasks2"
+            class="tasks"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+        </div>
+        <div class="column" id="column3">
+          <div id="header">
+            TO BE TESTED<button id="myBtn" onclick="newTask('to-be-test')">
+              Add
+            </button>
+          </div>
+          <div
+            id="tasks3"
+            class="tasks"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+        </div>
+        <div class="column" id="column4">
+          <div id="header">
+            DONE
+            <button id="myBtn" onclick="newTask('done')">Add</button>
+          </div>
+          <div
+            id="tasks4"
+            class="tasks"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Remove script and main.js file if you dont need javascript -->
+    <script src="main.js" type="text/javascript"></script>
+  </body>
+</html>
